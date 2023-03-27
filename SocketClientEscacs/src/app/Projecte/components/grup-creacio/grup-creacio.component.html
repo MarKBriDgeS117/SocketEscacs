@@ -1,0 +1,30 @@
+<h3>Insereix el equip</h3>
+<br />
+<br />
+<form [formGroup]="equip" (ngSubmit)="save()">
+  <div>
+    <label for="nomEquip" class="form-label">Nom Equip</label>
+    <input
+      type="text"
+      class="form-control"
+      id="nomEquip"
+      formControlName="nomEquip"
+    />
+    <label for="jugador1" class="form-label">Jugador 1</label>
+    <input
+      type="text"
+      class="form-control"
+      id="jugador1"
+      formControlName="jugador1"
+    />
+    <label for="jugador2" class="form-label">Jugador 2</label>
+    <input
+      type="text"
+      class="form-control"
+      id="jugador2"
+      formControlName="jugador2"
+    />
+  </div>
+  <button type="submit">Entrar</button>
+</form>
+<app-jugar></app-jugar>

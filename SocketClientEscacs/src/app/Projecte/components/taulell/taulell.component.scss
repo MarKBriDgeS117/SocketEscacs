@@ -1,0 +1,61 @@
+.taulell-mortes {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.taulell-mortes .img {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.tablero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.fila {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.casilla {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+}
+
+.borde {
+  background-color: #eee;
+}
+
+.blanco {
+  background-color: #fff;
+}
+
+.negro {
+  background-color: #888;
+}
+
+.casilla div {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+ 
+}
+
+.casilla div img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}

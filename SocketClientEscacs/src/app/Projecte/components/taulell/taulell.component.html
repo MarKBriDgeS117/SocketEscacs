@@ -1,0 +1,40 @@
+<h1>{{Taulell.equips}}</h1>
+<h1>{{Taulell.jugador2.jugador}} {{Taulell.jugador2.color}}</h1>
+
+<div class="taulell-mortes">
+  <img class="img" *ngFor="let peca of Taulell.pecesjugador1" [src]="peca.img" />
+</div>
+
+<div class="tablero">
+  <!-- Letters row -->
+  <h1>Taulell {{Taulell.id}}</h1>
+  <div class="fila">
+    <div class="casilla borde"></div>
+    <div class="casilla borde" *ngFor="let col of Taulell.letters">{{col}}</div>
+    <div class="casilla borde"></div>
+  </div>
+  <!-- Chessboard rows -->
+  <div class="fila" *ngFor="let fila of Taulell.caselles; let i = index">
+    <!-- Numbers column -->
+    <div class="casilla borde">{{Taulell.numbers[i]}}</div>
+    <div class="casilla" *ngFor="let peca of fila; let j = index"
+      [ngClass]="{blanco: (i + j) % 2 === 0, negro: (i + j) % 2 === 1}"
+      (dragover)="Taulell.allowDrop($event,disableDragAndDrop )" (drop)="Taulell.drop($event, i, j,disableDragAndDrop)">
+      <div *ngIf="peca.contePeca" [attr.draggable]="true" (dragstart)="Taulell.drag($event, i, j,disableDragAndDrop)">
+        <img class="img" src="{{peca.peca.img}}" alt="" srcset="">
+      </div>
+    </div>
+    <div class="casilla borde">{{Taulell.numbers[i]}}</div>
+  </div>
+
+  <!-- Letters row -->
+  <div class="fila">
+    <div class="casilla borde"></div>
+    <div class="casilla borde" *ngFor="let col of Taulell.letters">{{col}}</div>
+    <div class="casilla borde"></div>
+  </div>
+</div>
+<div class="taulell-mortes">
+  <img class="img" *ngFor="let peca of Taulell.pecesjugador2" [src]="peca.img" />
+</div>
+<h1>{{Taulell.jugador1.jugador}} {{Taulell.jugador1.color}}</h1>
